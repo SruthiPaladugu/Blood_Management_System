@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BloodManagementSystem_MVC_.Models.Donor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table-striped" width="50%">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorBloodGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorLocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorBloodGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorLocation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DonorId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DonorId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DonorId })
+            </td>
+        </tr>
+    }
+
+</table>

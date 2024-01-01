@@ -1,0 +1,104 @@
+﻿@model IEnumerable<BloodManagementSystem_MVC_.Models.Stock>
+
+@{
+    ViewBag.Title = "_GridView";
+}
+
+<style>
+body { background-image: url('https://media.istockphoto.com/photos/blood-bag-picture-id160057787?k=6&m=160057787&s=612x612&w=0&h=QPjrjI44Rro0jgJFKjxokuNCvryHCySZzqCNlP4L43U='); background-repeat: no-repeat, repeat; height: 1200px; /* You must set a specified height */ background-position: center; /* Center the image */ background-repeat: no-repeat; /* Do not repeat the image */ background-size: cover }
+</style>
+<style>
+    table {
+        border-collapse: separate;
+        border-spacing: 0 15px;
+    }
+
+    th {
+        background-color: #AEE1DE;
+        color: black;
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    /*th,*/
+    td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    h2 {
+        color: #4287f5;
+    }
+</style>
+
+
+<table class="table-striped" width="50%">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorContact)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Donor.DonorLocation)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.DonatedDate)
+        </th>
+        <th>
+            <h5><strong>Availability</strong></h5>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonorId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BloodGroup)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonorName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonorContact)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Donor.DonorLocation)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.DonatedDate)
+    </td>
+    <td>
+
+        @if ((DateTime.Now - Convert.ToDateTime(item.DonatedDate)).TotalDays > 30)
+        {
+            <h5>Available</h5>
+            @Html.ActionLink("Request", "Create", "Requests")
+        }
+
+        else
+        {
+            <h5>Not Available</h5>
+        }
+
+    </td>
+</tr>
+    }
+
+</table>
+<br />
+

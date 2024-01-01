@@ -1,0 +1,42 @@
+﻿@model BloodManagementSystem_MVC_.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SeekerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeekerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RequestId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

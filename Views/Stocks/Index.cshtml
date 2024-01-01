@@ -1,0 +1,37 @@
+﻿
+
+<br />
+<h3>Stock</h3>
+<br />
+<br />
+<br />
+
+
+<label>Search</label>
+<input type="text" class="form-control" id="txtSearch" />
+<div id="grdUsers"></div>
+
+<script>
+$(() => {
+getUsers();
+$('#txtSearch').on('keyup', () => {
+console.log("hi");
+getUsers();
+})
+});
+function getUsers() {
+$.ajax({
+url: '@Url.Action("SearchUsers","Stocks")',
+data: 'html',
+method: 'GET',
+data: { searchText: $('#txtSearch').val() },
+success: function (res) {
+$('#grdUsers').html(' ').html(res);
+console.log("hi");
+},
+error: function (err) {
+console.log(err);
+}
+})
+}
+</script>

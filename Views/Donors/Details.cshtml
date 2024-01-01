@@ -1,0 +1,104 @@
+﻿@model BloodManagementSystem_MVC_.Models.Donor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Donor HomePage</h2>
+
+<style>
+    body {
+        background-image: url('https://bansalhospital.com/wp-content/uploads/2020/09/Blood-Bank-980x481.jpg');
+        background-repeat: no-repeat, repeat;
+        height: 1200px; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover
+    }
+</style>
+
+
+<style>
+    table {
+        border-collapse: separate;
+        border-spacing: 0 15px;
+    }
+
+    th {
+        background-color: #bae3e1;
+        color: black;
+    }
+
+    th,
+    td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    h2 {
+        color: #4287f5;
+    }
+</style>
+
+<div>
+    <h4>Welcome dear Donor.....!</h4>
+    <br />
+    <br />
+
+    <table class="table-striped" width="50%">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorBloodGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonorLocation)
+            </th>
+        </tr>
+        <br />
+        <tr>
+            <th>
+                @Html.DisplayFor(model => model.DonorId)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.DonorName)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.DonorPhone)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.DonorBloodGroup)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.DonorLocation)
+            </th>
+        </tr>
+    </table>
+</div>
+
+</br>
+</br>
+</br>
+<div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        @Html.ActionLink("Edit My Details", "Edit", "Donors", new { id = Model.DonorId }, new { @class = "btn btn-primary" }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        @Html.ActionLink("Donate Blood", "Create", "Stocks", new { id = Model.DonorId }, new { @class = "btn btn-primary" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        @Html.ActionLink("Any Requests", "Index", "Requests", new { id = Model.DonorId }, new { @class = "btn btn-primary" })&nbsp;&nbsp;&nbsp;
+
+        @Html.ActionLink("Log Out", "LogOut", "Donors", new { @class = "btn btn-primary" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+
+@*<div>@Html.ActionLink("Log Out", "Logout", "Donors", new { @class = "btn btn-primary" })</div>*@

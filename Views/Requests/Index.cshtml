@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BloodManagementSystem_MVC_.Models.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+</p>
+<table class="table-striped" width="50%">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeekerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeekerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodGroup)
+            </td>
+
+        </tr>
+    }
+
+</table>

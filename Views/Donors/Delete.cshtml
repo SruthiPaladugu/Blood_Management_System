@@ -1,0 +1,56 @@
+﻿@model BloodManagementSystem_MVC_.Models.Donor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Donor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorBloodGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorBloodGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorLocation)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

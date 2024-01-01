@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BloodManagementSystem_MVC_.Models.Seeker>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table-striped" width="50%">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SeekerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeekerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeekerPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeekerBloodGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeekerLocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeekerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeekerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeekerPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeekerBloodGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeekerLocation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SeekerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SeekerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SeekerId })
+            </td>
+        </tr>
+    }
+
+</table>
